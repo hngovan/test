@@ -10,13 +10,16 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: '2020',
+    ecmaFeatures: {
+      jsx: true
+    },
+    ecmaVersion: 2020,
     sourceType: 'module',
     project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
     tsconfigRootDir: __dirname,
   },
-  parser: '@typescript-eslint/parser',
   plugins: ['react-refresh', 'react-hooks', 'prettier'],
   rules: {
     '@typescript-eslint/no-explicit-any': 'warn',
@@ -24,9 +27,9 @@ module.exports = {
     '@typescript-eslint/return-await': 'error',
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'react-hooks/exhaustive-deps': 'warn',
-    'react-hooks/exhaustive-deps': 'warn',
     'react-hooks/rules-of-hooks': 'error',
     'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
     'no-return-await': 'off',
     'prettier/prettier': [
       'warn',
@@ -46,5 +49,10 @@ module.exports = {
         insertPragma: false
       }
     ]
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 }

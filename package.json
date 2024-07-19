@@ -23,8 +23,6 @@
     "react-i18next": "^15.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2",
     "@types/node": "^20.14.11",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -43,7 +41,10 @@
     "typescript": "^5.2.2",
     "vite": "^5.3.4"
   },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --cache --fix"
+  },
   "engines": {
-    "node": "20.x"
+    "node": "22.x"
   }
 }
