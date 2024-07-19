@@ -1,6 +1,0 @@
-{
-  "src/**/*.{ts,tsx}": [
-    "eslint --fix . --ext .ts,.tsx --max-warnings 0",
-    "prettier --write \"src/**/(*.tsx|*.ts|*.css|*.scss)\""
-  ]
-}
