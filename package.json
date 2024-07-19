@@ -42,7 +42,7 @@
     "vite": "^5.3.4"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "eslint --cache --fix"
+    "*.{ts,tsx}": "npm run lint"
   },
   "engines": {
     "node": "22.x"
