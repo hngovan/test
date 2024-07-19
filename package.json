@@ -11,7 +11,7 @@
     "prettier": "prettier --check \"src/**/*.{tsx,ts,css,scss}\"",
     "prettier:fix": "prettier --write \"src/**/*.{tsx,ts,css,scss}\"",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
@@ -44,7 +44,8 @@
     "vite": "^5.3.4"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,css,scss}": "eslint --cache --fix"
+    "*.{ts,tsx,js,jsx,css,scss}": "eslint --cache --fix",
+    "*.{ts,tsx}": "eslint --cache --fix"
   },
   "engines": {
     "node": "22.x"
