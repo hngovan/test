@@ -8,8 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint --fix . --ext .ts,.tsx --max-warnings 0",
-    "prettier": "prettier --check \"src/**/(*.tsx|*.ts|*.css|*.scss)\"",
-    "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.css|*.scss)\"",
+    "prettier": "prettier --check \"src/**/*.{tsx,ts,css,scss}\"",
+    "prettier:fix": "prettier --write \"src/**/*.{tsx,ts,css,scss}\"",
     "preview": "vite preview",
     "prepare": "husky"
   },
@@ -23,6 +23,8 @@
     "react-i18next": "^15.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@types/node": "^20.14.11",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -34,7 +36,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "husky": "^9.0.11",
+    "husky": "^9.1.1",
     "lint-staged": "^15.2.7",
     "path": "^0.12.7",
     "prettier": "^3.3.3",
@@ -42,7 +44,7 @@
     "vite": "^5.3.4"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "npm run lint"
+    "*.{ts,tsx,js,jsx,css,scss}": "eslint --cache --fix"
   },
   "engines": {
     "node": "22.x"
