@@ -9,7 +9,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended'
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'stylelint.config.cjs'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'stylelint.config.cjs', 'tailwind.config.cjs', 'postcss.config.cjs', 'commitlint.config.cjs'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
