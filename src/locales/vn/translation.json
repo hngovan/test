@@ -1,1 +1,10 @@
-{}
+{
+  "common": {
+    "dashboard": "Bảng điều khiển",
+    "clientError": "Lỗi máy khách"
+  },
+  "error404": {
+    "comeBack": "Trở về nhà",
+    "notFound": "Xin lỗi, không tìm thấy trang!"
+  }
+}

@@ -33,4 +33,4 @@ const themeSlice = createSlice({
   }
 })
 
-export const themeReducer = themeSlice.reducer
+export default themeSlice.reducer

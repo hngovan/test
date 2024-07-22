@@ -1,11 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { errorLoggingMiddleware } from './middlewares/errorLogging.middleware'
-import { themeReducer } from './slice/themeSlice'
+import rootReducer from './slice'
 
 export const store = configureStore({
-  reducer: {
-    theme: themeReducer
-  },
+  reducer: rootReducer,
   devTools: process.env.NODE_ENV !== 'production',
   middleware: getDefaultMiddleware => getDefaultMiddleware().concat(errorLoggingMiddleware)
 })

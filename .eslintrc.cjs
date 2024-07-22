@@ -9,7 +9,14 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended'
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'stylelint.config.cjs', 'tailwind.config.cjs', 'postcss.config.cjs', 'commitlint.config.cjs'],
+  ignorePatterns: [
+    'dist',
+    '.eslintrc.cjs',
+    'stylelint.config.cjs',
+    'tailwind.config.cjs',
+    'postcss.config.cjs',
+    'commitlint.config.cjs'
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -18,7 +25,7 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: 'module',
     project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
+    tsconfigRootDir: __dirname
   },
   plugins: ['react-refresh', 'react-hooks', 'prettier'],
   rules: {
@@ -30,25 +37,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
-    'no-return-await': 'off',
-    'prettier/prettier': [
-      'warn',
-      {
-        semi: false,
-        trailingComma: 'none',
-        tabWidth: 2,
-        useTabs: false,
-        bracketSpacing: true,
-        bracketSameLine: false,
-        endOfLine: 'auto',
-        singleQuote: true,
-        printWidth: 120,
-        jsxSingleQuote: true,
-        arrowParens: 'avoid',
-        quoteProps: 'as-needed',
-        insertPragma: false
-      }
-    ]
+    'no-return-await': 'off'
   },
   settings: {
     react: {

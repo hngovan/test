@@ -1,4 +1,4 @@
-import { Dates } from '@/constants/Date'
+import { Dates } from '@/constants/date'
 import { LanguageType } from '@/interfaces/interfaces'
 import { useCallback, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
