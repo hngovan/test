@@ -6,7 +6,6 @@ const { Title } = Typography
 
 const Dashboard: React.FC = () => {
   const { t } = useTranslation()
-  console.log(t('common.dashboard'))
 
   return (
     <>

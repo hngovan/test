@@ -6,7 +6,7 @@ interface OverlayProps {
 }
 
 const Overlay: React.FC<OverlayProps> = ({ show, onClick }) => {
-  return <div className={`absolute z-10 h-0 ${show ? 'h-screen w-screen backdrop-blur-sm' : ''}`} onClick={onClick} />
+  return <div className={`absolute z-20 h-0 ${show ? 'h-screen w-screen backdrop-blur-sm' : ''}`} onClick={onClick} />
 }
 
 export default Overlay

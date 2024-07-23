@@ -1,7 +1,8 @@
 // import { ProfileDropdown } from '../components/profileDropdown/ProfileDropdown/ProfileDropdown'
 // import { SettingsDropdown } from '../components/settingsDropdown/SettingsDropdown'
-import { Row, Col } from 'antd'
-import { BurgerIcon } from '../common/Icons/BurgerIcon'
+import { Row, Col, Button } from 'antd'
+import { MenuOutlined, CloseOutlined } from '@ant-design/icons'
+import { ThemePicker } from './components/ThemePicker'
 
 interface MobileHeaderProps {
   toggleSider: () => void
@@ -12,15 +13,20 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({ toggleSider, isSider
   return (
     <Row justify='space-between' align='middle'>
       <Col>{/* <ProfileDropdown /> */}</Col>
-
       <Col>
         <Row align='middle'>
-          <Col>{/* <SettingsDropdown /> */}</Col>
+          <Col>
+            <ThemePicker />
+          </Col>
         </Row>
       </Col>
-
       <div className='z-50 flex'>
-        <BurgerIcon onClick={toggleSider} isCross={isSiderOpened} />
+        <Button
+          type='text'
+          icon={isSiderOpened ? <CloseOutlined /> : <MenuOutlined />}
+          onClick={toggleSider}
+          className='h-[50px] text-base'
+        />
       </div>
     </Row>
   )

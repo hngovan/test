@@ -10,5 +10,9 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ toggleSider, isSiderOpened }) => {
   const { isTablet } = useResponsive()
 
-  return isTablet ? <DesktopHeader /> : <MobileHeader toggleSider={toggleSider} isSiderOpened={isSiderOpened} />
+  return isTablet ? (
+    <DesktopHeader toggleSider={toggleSider} isSiderOpened={isSiderOpened} />
+  ) : (
+    <MobileHeader toggleSider={toggleSider} isSiderOpened={isSiderOpened} />
+  )
 }

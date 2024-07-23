@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        'mobile-header': '4.25rem',
-        'desktop-header': '5.625rem',
+        'mobile-header': '3.125rem',
+        'desktop-header': '4.375rem',
       },
       spacing: {
         'mobile-vertical': '0.75rem',

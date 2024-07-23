@@ -3,7 +3,7 @@ import { useResponsive } from '@/hooks/useResponsive'
 import Sider from 'antd/es/layout/Sider'
 import { SiderMenu } from './SiderMenu'
 import { SiderLogo } from './SiderLogo'
-import Overlay from '@/components/common/Overlay/Overlay'
+import Overlay from '@/components/common/Overlay'
 
 interface MainSiderProps {
   isCollapsed: boolean
@@ -25,12 +25,11 @@ export const MainSider: React.FC<MainSiderProps> = ({ isCollapsed, setCollapsed,
         collapsedWidth={tabletOnly ? 80 : 0}
         collapsible={isCollapsible}
         width={260}
+        className='!fixed right-0 z-30 max-h-screen min-h-screen overflow-visible md:!relative md:left-0 md:right-auto'
         {...props}
       >
-        <SiderLogo isSiderCollapsed={isCollapsed} toggleSider={toggleSider} />
-        <div className='h-[calc(100vh - h-mobile-header)] md:h-[calc(100vh - h-desktop-header)] overflow-y-auto overflow-x-hidden'>
-          <SiderMenu theme={'dark'} setCollapsed={setCollapsed} />
-        </div>
+        <SiderLogo />
+        <SiderMenu setCollapsed={setCollapsed} />
       </Sider>
       {mobileOnly && <Overlay onClick={toggleSider} show={!isCollapsed} />}
     </>
