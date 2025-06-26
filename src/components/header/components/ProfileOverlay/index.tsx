@@ -3,6 +3,7 @@ import { Avatar, Divider, Modal, Space } from 'antd'
 import { LoginOutlined, ProfileOutlined, UserOutlined } from '@ant-design/icons'
 import { useAppSelector } from '@/hooks/reduxHooks'
 import { useNavigate } from 'react-router-dom'
+import { Fragment } from 'react/jsx-runtime'
 
 export const ProfileOverlay: React.FC = ({ ...props }) => {
   const { t } = useTranslation()
@@ -49,13 +50,13 @@ export const ProfileOverlay: React.FC = ({ ...props }) => {
       <Divider className='my-0' />
       <Space direction='vertical' size={0}>
         {items.map(item => (
-          <>
-            <div key={item.key} onClick={item.onClick} className='flex cursor-pointer gap-3 py-3'>
+          <Fragment key={item.key}>
+            <div onClick={item.onClick} className='flex cursor-pointer gap-3 py-3'>
               <div>{item.icon}</div>
               <div>{item.label}</div>
             </div>
             <Divider className='my-0' />
-          </>
+          </Fragment>
         ))}
       </Space>
     </div>

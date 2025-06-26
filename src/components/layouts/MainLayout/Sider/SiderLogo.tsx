@@ -8,16 +8,21 @@ import { useResponsive } from '@/hooks/useResponsive'
 export const SiderLogo: React.FC = () => {
   const { Title } = Typography
 
-  const { isDesktop } = useResponsive()
+  const { isDesktop, desktopOnly, tabletOnly } = useResponsive()
 
   const theme = useAppSelector(state => state.theme.theme)
 
   const img = theme === 'dark' ? logoDark : logo
 
   return (
-    <div className='flex h-mobile-header items-center justify-between bg-white p-2 md:h-desktop-header md:p-4 dark:bg-[#001529]'>
+    <div className='flex items-center justify-between bg-white p-2 md:p-4 dark:bg-[#001529]'>
       <Link className='relative flex items-center justify-center overflow-hidden' to='/'>
-        <img src={img} alt='POrder' width={46} height={46} />
+        <img
+          src={img}
+          alt='POrder'
+          width={desktopOnly || tabletOnly ? 46 : 24}
+          height={desktopOnly || tabletOnly ? 46 : 24}
+        />
         {isDesktop && <Title className='my-0 px-4 text-lg font-bold'>POrder</Title>}
       </Link>
     </div>

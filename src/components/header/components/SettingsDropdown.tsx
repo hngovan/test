@@ -7,7 +7,7 @@ export const SettingsDropdown: React.FC = () => {
   const [isOpened, setOpened] = useState(false)
 
   return (
-    <Popover content={<SettingsOverlay />} trigger='click' onOpenChange={setOpened}>
+    <Popover content={<SettingsOverlay />} trigger='hover' onOpenChange={setOpened}>
       <Button size='large' icon={<SettingOutlined />} type={isOpened ? 'dashed' : 'text'} />
     </Popover>
   )

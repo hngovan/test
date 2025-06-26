@@ -12,7 +12,7 @@ interface MainSiderProps {
 }
 
 export const MainSider: React.FC<MainSiderProps> = ({ isCollapsed, setCollapsed, ...props }) => {
-  const { isDesktop, mobileOnly, tabletOnly } = useResponsive()
+  const { isDesktop, desktopOnly, mobileOnly, tabletOnly } = useResponsive()
   const theme = useAppSelector(state => state.theme.theme)
 
   const isCollapsible = useMemo(() => mobileOnly && tabletOnly, [mobileOnly, tabletOnly])
@@ -27,10 +27,10 @@ export const MainSider: React.FC<MainSiderProps> = ({ isCollapsed, setCollapsed,
         collapsedWidth={tabletOnly ? 80 : 0}
         collapsible={isCollapsible}
         width={260}
-        className='fixed right-0 z-30 max-h-screen min-h-screen overflow-visible border-r border-[#e5e7eb] md:relative md:left-0 md:right-auto dark:border-[#1f2e3d]'
+        className='fixed left-0 z-30 max-h-screen min-h-screen overflow-visible border-r border-[#e5e7eb] md:relative md:left-0 md:right-auto dark:border-[#1f2e3d]'
         {...props}
       >
-        <SiderLogo />
+        {(desktopOnly || tabletOnly) && <SiderLogo />}
         <SiderMenu setCollapsed={setCollapsed} theme={theme} />
       </Sider>
       {mobileOnly && <Overlay onClick={toggleSider} show={!isCollapsed} />}

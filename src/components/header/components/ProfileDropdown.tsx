@@ -7,7 +7,7 @@ export const ProfileDropdown: React.FC = () => {
   const user = useAppSelector(state => state.admin.admin)
 
   return user ? (
-    <Popover content={<ProfileOverlay />} trigger='click'>
+    <Popover content={<ProfileOverlay />} trigger='hover'>
       <Col>
         <Avatar
           src={user?.avatar}
