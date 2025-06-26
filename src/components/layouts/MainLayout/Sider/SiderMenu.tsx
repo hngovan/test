@@ -3,8 +3,10 @@ import { sidebarNavigation, SidebarNavigationItem } from './sidebarNavigation'
 import { useTranslation } from 'react-i18next'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu } from 'antd'
+import { ThemeType } from '@/interfaces/interfaces'
 
 interface SiderContentProps {
+  theme: ThemeType
   setCollapsed: (isCollapsed: boolean) => void
 }
 
@@ -14,7 +16,7 @@ const sidebarNavFlat = sidebarNavigation.reduce(
   []
 )
 
-export const SiderMenu: React.FC<SiderContentProps> = ({ setCollapsed }) => {
+export const SiderMenu: React.FC<SiderContentProps> = ({ setCollapsed, theme }) => {
   const { t } = useTranslation()
 
   const location = useLocation()
@@ -28,6 +30,7 @@ export const SiderMenu: React.FC<SiderContentProps> = ({ setCollapsed }) => {
 
   return (
     <Menu
+      theme={theme}
       mode='inline'
       defaultSelectedKeys={defaultSelectedKeys}
       defaultOpenKeys={defaultOpenKeys}
@@ -49,7 +52,7 @@ export const SiderMenu: React.FC<SiderContentProps> = ({ setCollapsed }) => {
             }))
         }
       })}
-      className='h-[calc(100vh-3.125rem)] overflow-y-auto overflow-x-hidden md:h-[calc(100vh-4.375rem)]'
+      className='h-[calc(100vh-3.125rem)] overflow-y-auto overflow-x-hidden border-0 md:h-[calc(100vh-4.375rem)]'
       style={{ scrollbarWidth: 'none' }}
     />
   )

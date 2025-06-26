@@ -1,7 +1,24 @@
 {
+  "header": {
+    "changeLanguage": "Change Language",
+    "changeTheme": "Change Theme"
+  },
   "common": {
     "dashboard": "Dashboard",
-    "clientError": "Client Error"
+    "clientError": "Client Error",
+    "logout": "Logout",
+    "profile": "Profile"
+  },
+  "modal": {
+    "logout": {
+      "title": "Logout",
+      "content": "Do you want logout ?"
+    },
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "save": "Save"
   },
   "error404": {
     "comeBack": "Return to Home",

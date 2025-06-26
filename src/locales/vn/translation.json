@@ -1,7 +1,24 @@
 {
+  "header": {
+    "changeLanguage": "Thay đổi ngôn ngữ",
+    "changeTheme": "Thay đổi chủ đề"
+  },
   "common": {
     "dashboard": "Bảng điều khiển",
-    "clientError": "Lỗi máy khách"
+    "clientError": "Lỗi máy khách",
+    "logout": "Đăng xuất",
+    "profile": "Hồ sơ"
+  },
+  "modal": {
+    "logout": {
+      "title": "Đăng xuất",
+      "content": "Bạn có muốn đăng xuất không?"
+    },
+    "confirm": "Xác nhận",
+    "cancel": "Hủy bỏ",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "save": "Lưu"
   },
   "error404": {
     "comeBack": "Trở về nhà",

@@ -8,9 +8,11 @@ import { withLoading } from '@/hocs/withLoading.hoc'
 
 const DashboardPages = lazy(() => import('@/pages/Dashboard/Dashboard'))
 const Error404Page = lazy(() => import('@/pages/Error404'))
+const Logout = lazy(() => import('./Logout'))
 
 const Dashboard = withLoading(DashboardPages)
 const Error404 = withLoading(Error404Page)
+const LogoutFallback = withLoading(Logout)
 
 // const AuthLayoutFallback = withLoading(AuthLayout)
 
@@ -35,21 +37,21 @@ export const AppRouter: React.FC = () => {
           element: <Error404 />
         }
       ]
-    }
+    },
+    // {
+    //   path: 'auth',
+    //   element: <AuthLayoutFallback />,
+    //   children: [
     //     {
-    //       path: 'auth',
-    //       element: <AuthLayoutFallback />,
-    //       children: [
-    //         {
-    //           path: 'login',
-    //           element: <LoginPage />
-    //         }
-    //       ]
-    //     },
-    //     {
-    //       path: 'logout',
-    //       element: <LogoutFallback />
+    //       path: 'login',
+    //       element: <LoginPage />
     //     }
+    //   ]
+    // },
+    {
+      path: 'logout',
+      element: <LogoutFallback />
+    }
   ])
 
   return <RouterProvider router={router} />

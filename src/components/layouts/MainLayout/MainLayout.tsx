@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import { Layout } from 'antd'
+import { Header } from '@/components/header/Header'
 import { MainHeader } from './MainHeader'
 import { MainSider } from './Sider/MainSider'
 import { MainFooter } from './MainFooter'
 import { MainBreadcrumb } from './MainBreadcrumb'
-import { Header } from '@/components/header/Header'
 
 const { Content } = Layout
 
@@ -22,7 +22,7 @@ const MainLayout: React.FC = () => {
           <Header toggleSider={toggleSider} isSiderOpened={!siderCollapsed} />
         </MainHeader>
         <Content className='flex flex-col justify-between overflow-auto px-mobile-horizontal py-mobile-vertical md:px-desktop-horizontal md:py-desktop-vertical'>
-          <div>
+          <div className='h-full w-full'>
             <MainBreadcrumb />
             <Outlet />
           </div>

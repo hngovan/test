@@ -11,6 +11,7 @@ const Dashboard: React.FC = () => {
     <>
       <PageTitle>{t('common.dashboard')}</PageTitle>
       <Title>{t('common.dashboard')}</Title>
+      <div className='button-add-text'>sss</div>
     </>
   )
 }
